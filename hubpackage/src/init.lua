@@ -145,8 +145,8 @@ end
 
 local function get_device_info(device)
 
-  --local ret, response = fetch_device_data(device, "http://" .. device.preferences.deviceaddr .. "/d")
-  local ret, response = fetch_device_data(device, "http://" .. device.preferences.deviceaddr .. ":6666/d")    -- ***** TESTING
+  local ret, response = fetch_device_data(device, "http://" .. device.preferences.deviceaddr .. "/d")
+  --local ret, response = fetch_device_data(device, "http://" .. device.preferences.deviceaddr .. ":6666/d")    -- ***** TESTING
 
   if ret == 'OK' then
     update_device_info(device, parser.parseinfo(device, response))
